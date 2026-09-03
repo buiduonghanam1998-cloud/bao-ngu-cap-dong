@@ -1,0 +1,6 @@
+{
+  "name": "Bào Ngư Golden Food",
+  "description": "Bào Ngư đông lạnh Golden Food - Hải sản cao cấp, thơm ngon, chuẩn vị, giao tận nơi toàn quốc",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
