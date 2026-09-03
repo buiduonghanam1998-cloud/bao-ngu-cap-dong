@@ -1,6 +1,6 @@
 import React from 'react';
 import { ASSETS } from '../data/mockData';
-import { Phone, ShoppingBag, CheckCircle2, ChevronRight } from 'lucide-react';
+import { Phone, ShoppingBag, ChevronRight } from 'lucide-react';
 
 interface HeaderProps {
   currentScreen: 'home' | 'success';
@@ -10,45 +10,7 @@ interface HeaderProps {
 
 export const Header: React.FC<HeaderProps> = ({ currentScreen, onNavigate, onScrollToOrder }) => {
   return (
-    <>
-      {/* Top Admin/Preview Switcher Bar to allow seamless switching between Screen 1 and Screen 2 */}
-      <aside aria-label="Bộ chuyển đổi màn hình" className="bg-[#0f172a] text-slate-200 text-xs py-2 px-4 border-b border-slate-700/60 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
-          <div className="flex items-center gap-2">
-            <span className="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            <span className="font-medium text-slate-300">Xem thử 2 màn hình thiết kế:</span>
-          </div>
-          <div className="flex items-center gap-1.5 bg-slate-800/90 p-0.5 rounded-lg border border-slate-700">
-            <button
-              id="view-home-screen-btn"
-              onClick={() => onNavigate('home')}
-              className={`px-3 py-1 rounded-md text-xs font-semibold transition-all flex items-center gap-1.5 ${
-                currentScreen === 'home'
-                  ? 'bg-primary text-white shadow-sm'
-                  : 'text-slate-400 hover:text-white hover:bg-slate-700/50'
-              }`}
-            >
-              <ShoppingBag className="w-3.5 h-3.5" />
-              Màn hình 1: Trang chủ / Đặt hàng
-            </button>
-            <button
-              id="view-success-screen-btn"
-              onClick={() => onNavigate('success')}
-              className={`px-3 py-1 rounded-md text-xs font-semibold transition-all flex items-center gap-1.5 ${
-                currentScreen === 'success'
-                  ? 'bg-emerald-600 text-white shadow-sm'
-                  : 'text-slate-400 hover:text-white hover:bg-slate-700/50'
-              }`}
-            >
-              <CheckCircle2 className="w-3.5 h-3.5" />
-              Màn hình 2: Đặt hàng thành công (#GF-88692)
-            </button>
-          </div>
-        </div>
-      </aside>
-
-      {/* Main Brand Navigation Bar */}
-      <header className="bg-white/95 backdrop-blur-md border-b border-slate-100 sticky top-9 z-40 shadow-xs">
+    <header className="bg-white/95 backdrop-blur-md border-b border-slate-100 sticky top-0 z-40 shadow-xs">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
           {/* Logo & Brand Name */}
           <div 
@@ -119,6 +81,5 @@ export const Header: React.FC<HeaderProps> = ({ currentScreen, onNavigate, onScr
           </div>
         </div>
       </header>
-    </>
   );
 };
